@@ -39,8 +39,8 @@ class GLInetSensor:
         self.state_topic = f"homeassistant/sensor/glinet_{GLINET_DEVICE}_{name_replace}/state"
         self.unique_id = f"glinet_{name_replace}"
         self.device = {
-            "identifiers": [f"glinet_{name_replace}"][0],
-            "name": f"GLInet For {name_replace}",
+            "identifiers": [f"glinet_{GLINET_DEVICE}_{name_replace}"][0],
+            "name": f"GLInet {name_replace} for {GLINET_DEVICE}",
         }
 
     def to_json(self):
