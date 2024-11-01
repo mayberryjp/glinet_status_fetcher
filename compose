@@ -1,0 +1,15 @@
+version: "3"
+services:
+  glinet_status_fetcher:
+    container_name: glinet_status_fetcher
+    restart: "unless-stopped"
+    image: glinet_status_fetcher:v1.0.1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - GLINET_PASSWORD=
+      - MQTT_PASSWORD=
+      - GLINET_DEVICE=
+      - GLINET_HOST= 
+      - MQTT_HOST=
+      - MQTT_USERNAME=
