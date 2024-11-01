@@ -1,7 +1,6 @@
-version: "3"
 services:
-  glinet_status_fetcher:
-    container_name: glinet_status_fetcher
+  glinet_status_fetcher_hiace:
+    container_name: glinet_status_fetcher_hiace
     restart: "unless-stopped"
     image: glinet_status_fetcher:v1.0.1
     volumes:
