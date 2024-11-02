@@ -28,7 +28,7 @@ class GLInetSensor:
     def __init__(self, name_constant):
         name_replace=name_constant
         name_object=ENTITIES[name_constant]
-        self.name = f"glinet_{name_replace}"
+        self.name = f"glinet_{GLINET_DEVICE}_{name_replace}"
         self.device_class = name_object['type'],
         self.unit_of_measurement = name_object['unit'],
         test = name_object.get('attribute')
@@ -37,7 +37,7 @@ class GLInetSensor:
         else:
             self.state_class = "measurement"
         self.state_topic = f"homeassistant/sensor/glinet_{GLINET_DEVICE}_{name_replace}/state"
-        self.unique_id = f"glinet_{name_replace}"
+        self.unique_id = f"glinet_{GLINET_DEVICE}_{name_replace}"
         self.device = {
             "identifiers": [f"glinet_{GLINET_DEVICE}_{name_replace}"][0],
             "name": f"GLInet {name_replace} for {GLINET_DEVICE}",
